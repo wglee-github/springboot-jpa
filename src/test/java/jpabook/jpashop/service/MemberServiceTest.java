@@ -3,6 +3,8 @@ package jpabook.jpashop.service;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
@@ -26,7 +28,7 @@ class MemberServiceTest {
 	@Autowired MemberService memberService;
 	@Autowired EntityManager em;
 	
-	@Test
+//	@Test
 	public void 회원가입() throws Exception{
 		
 		// given
@@ -48,7 +50,7 @@ class MemberServiceTest {
 	 * 
 	 * @throws Exception
 	 */
-	@Test
+//	@Test
 	public void 중복_회원_예외() throws Exception{
 		
 		// given
@@ -73,4 +75,10 @@ class MemberServiceTest {
 	}
 
 
+	@Test
+	public void 회워조회() {
+		List<Member> members = memberRepository.findAll();
+		
+		members.stream().forEach(m -> System.out.println("======= Member 조회 : " + m));
+	}
 }

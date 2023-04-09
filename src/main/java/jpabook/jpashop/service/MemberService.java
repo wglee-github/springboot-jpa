@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import jpabook.jpashop.api.UpdateMemberRequest;
+import jpabook.jpashop.domain.Address;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -61,7 +63,18 @@ public class MemberService {
 		}
 	}
 	
-	
+	/**
+	 * 회원 수정 API 
+	 * CQS(Comman Query Separation)
+	 * - comman와 query를 분리하자.
+	 * - update 메소드는 반환값이 없는 void를 지향하자.
+	 */
+	@Transactional
+	public void updateMember(Long id, UpdateMemberRequest memberReq) {
+		Member member = memberRepository.findOne(id);
+		member.setName(memberReq.getName());
+		member.setAddress(new Address(memberReq.getCity(), memberReq.getStreet(), memberReq.getZipcode()));
+	}
 	
 	/**
 	 * 회원 전체 조회
@@ -69,7 +82,6 @@ public class MemberService {
 	public List<Member> findMembers(){
 		return memberRepository.findAll();
 	}
-	
 	
 	/**
 	 * 회원 단건 조회
