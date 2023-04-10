@@ -2,7 +2,10 @@ package jpabook.jpashop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Bean;
+
+import com.fasterxml.jackson.datatype.hibernate5.jakarta.Hibernate5JakartaModule;
+import com.fasterxml.jackson.datatype.hibernate5.jakarta.Hibernate5JakartaModule.Feature;
 
 /**
  * 
@@ -16,6 +19,13 @@ public class JpashopApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpashopApplication.class, args);
+	}
+	
+	@Bean
+	Hibernate5JakartaModule hibernate5JakartaModule() {
+		Hibernate5JakartaModule jakartaModule = new Hibernate5JakartaModule();
+		jakartaModule.configure(Feature.FORCE_LAZY_LOADING, false);
+		return jakartaModule;
 	}
 
 }

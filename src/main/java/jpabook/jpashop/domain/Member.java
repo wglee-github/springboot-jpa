@@ -3,6 +3,8 @@ package jpabook.jpashop.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -33,6 +35,7 @@ public class Member {
 	 * 연관관계 주인이 아닌 곳에 설정하며, 연관관계의 주인 필드명으로 표시(FK를 설정한 필드명)
 	 * 
 	 */
+	@JsonIgnore
 	@OneToMany(mappedBy = "member")
 	private List<Order> orders = new ArrayList<>();
 
