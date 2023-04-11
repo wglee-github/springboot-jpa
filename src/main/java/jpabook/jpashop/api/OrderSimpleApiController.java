@@ -49,8 +49,9 @@ public class OrderSimpleApiController {
  			· ERROR : Cannot call sendError() after the response has been committed
  		
 	 	2. 엔티티를 직접 노출하는 것은 좋지 않다.
-		· order member 와 order address 는 지연 로딩이다. 따라서 실제 엔티티 대신에 프록시 존재
+		· order의 member 와 order의 delivery 는 지연 로딩이다. 따라서 실제 엔티티 대신에 프록시 존재
 		· jackson 라이브러리는 기본적으로 이 프록시 객체를 json으로 어떻게 생성해야 하는지 모름 예외 발생
+			· ERROR : Type definition error: [simple type, class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor]
 		· Hibernate5Module 을 스프링 빈으로 등록하면 해결(스프링 부트 사용중)
 			· 스프링 부트 3.0 이상: Hibernate5JakartaModule 등록
 				· build.gradle 에 다음 라이브러리를 추가하자
