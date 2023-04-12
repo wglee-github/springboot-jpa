@@ -26,7 +26,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'	// 서버 사이드 랜더링 시 스프링부터 재시작 안해도 되도록 도와준다. 이 외에도 많은 기능이 있다고 한다.
-	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5-jakarta'
 	
 	compileOnly 'org.projectlombok:lombok'
