@@ -86,7 +86,7 @@ spring.jpa.hibernate.naming.physical-strategy : 모든 논리명에 적용됨, �
 (username usernm 등으로 회사 룰로 바꿀 수 있음)
 
 
-■ 인젝션으 놀라운 변화
+■ 인젝션의 놀라운 변화
 
 	/**
 	 * 
@@ -141,11 +141,12 @@ spring.jpa.hibernate.naming.physical-strategy : 모든 논리명에 적용됨, �
 
 	
 	/**
-	 * 4단계 - 생성자 인젝션  2
 	 * 
-	 * 1. 생성자가 하나만 있는 경우에는 @Autowired 가 없어도 스프링이 알아서 인젝션을 해준다.
-	 * 2. 필드 선언 시 final을 지정해 주자
-	 * 
+	 	4단계 - 생성자 인젝션  2
+	  
+	  	1. 생성자가 하나만 있는 경우에는 @Autowired 가 없어도 스프링이 알아서 인젝션을 해준다.
+	  	2. 필드 선언 시 final을 지정해 주자
+	  
 	 */
 //	private final MemberRepository memberRepository;
 //	
@@ -154,9 +155,11 @@ spring.jpa.hibernate.naming.physical-strategy : 모든 논리명에 적용됨, �
 //	}
 	
 	/**
-	 * 5단계 - 생성자 인젝션  3
-	 * - 품북에서 지원함.
-	 * Class에 @AllArgsConstructor 를 걸어주면 선언된 필드들 모두 생성자 인젝션을 만들어 준다. 즉, 생성자 부분 생략 가능하다.
+	 * 
+	 	5단계 - 생성자 인젝션  3
+	  	- 품북에서 지원함.
+	  	Class에 @AllArgsConstructor 를 걸어주면 선언된 필드들 모두 생성자 인젝션을 만들어 준다. 즉, 생성자 부분 생략 가능하다.
+	  	
 	 * 
 	 */
 //	private final MemberRepository memberRepository;

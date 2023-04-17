@@ -13,7 +13,8 @@ spring:
       '[hibernate.jdbc.batch_size]': 50
       '[hibernate.show_sql]': true    
       '[hibernate.format_sql]': true    
-      '[hibernate.highlight_sql]': true    
+      '[hibernate.highlight_sql]': true
+    open-in-view: true
     
 logging:
   level:

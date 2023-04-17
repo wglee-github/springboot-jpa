@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
 	// .gradlew 를 실행하기 위해 추가함.
-	implementation group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '3.0.5'
+	implementation 'org.springframework.boot:spring-boot-gradle-plugin:3.0.5'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
